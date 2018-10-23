@@ -1,0 +1,710 @@
+/* 加入我们 */
+.join-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.join-page {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: url("../img/bg.png") center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.main-frame {
+    width: 5.6rem;
+    height: 4.88rem;
+    margin: 1.24rem auto 0;
+    color: #59C2DC;
+    font-size: 0.54rem;
+    position: relative;
+}
+
+.swiper-slide-active .main-frame .bg {
+    width: 100%;
+    height: 100%;
+    background: url("../img/frame.png") center center no-repeat;
+    background-size: cover;
+    position: absolute;
+    animation: bounceIn 3s ease 0s 1 normal both;;
+}
+
+.swiper-slide-active .short-name {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    font-size: 0.52rem;
+    color: #63C4DE;
+    animation: fadeInUp 1s ease 0.5s 1 normal both;
+}
+
+.swiper-slide-active .main-frame b {
+    display: block;
+    width: 4.36rem;
+    height: 3.11rem;
+    background: url("../img/title.png") center center no-repeat;
+    background-size: cover;
+    margin: 0.37rem auto 0;
+    animation: zoomIn 1s ease 0s 1 normal both
+}
+
+.swiper-slide-active .find-dreamer {
+    width: 4.36rem;
+    margin: 0 auto;
+    animation: zoomIn 1s ease 3s 1 normal both;
+}
+
+.swiper-slide-active .main-frame span {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.7rem;
+    background: url("../img/magnifier.png") center center no-repeat;
+    background-size: cover;
+    right: 0.51rem;
+    top: 0.49rem;
+    animation: flip 3s ease 0s infinite normal both;
+}
+
+.swiper-slide-active .progress-group {
+    position: absolute;
+    height: 0.16rem;
+    left: 0.2rem;
+    bottom: -0.08rem;
+    animation: bounceIn 2s ease 0.5s 1 normal both;
+}
+
+.progress-item {
+    width: 0.3rem;
+    position: relative;
+    background-color: #59c2dc;
+    height: 0.16rem;
+    float: left;
+    margin-right: 0.1rem;
+    transform: skew(30deg);
+}
+
+.progress-item.show {
+    background-color: #2D8595;
+    transform: skew(30deg) scale(1.1);
+}
+
+.progress-item:last-child {
+    width: 1.2rem;
+}
+
+/* 底部 */
+.bottom-global {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.global {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.08rem;
+    background: url("../img/global.png") center center no-repeat;
+    background-size: cover;
+}
+
+.telescope-wrap {
+    position: absolute;
+    top: -1.57rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.43rem;
+    height: 1.73rem;
+}
+
+.swiper-slide-active .telescope {
+    position: absolute;
+    width: 1.43rem;
+    height: 1.24rem;
+    left: 0;
+    top: 0;
+    background: url("../img/telescope.png") center center no-repeat;
+    background-size: cover;
+    z-index: 2;
+    animation: telescopeRotate 3s ease 0s infinite normal both;
+}
+
+.tripod {
+    position: absolute;
+    width: 0.8rem;
+    height: 1.04rem;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: url("../img/tripod.png") center center no-repeat;
+    background-size: cover;
+    z-index: 2;
+}
+
+/* 线条小星球 */
+.line-star-wrap {
+    width: 100%;
+    margin-bottom: 1.59rem;
+    height: 2.94rem;
+    position: relative;
+}
+
+.line-star-1 {
+    height: 2.34rem;
+    width: 6.45rem;
+    right: 0.1rem;
+    top: 0;
+    background: url("../img/line-star-1.png") center center no-repeat;
+}
+
+.line-star-2 {
+    height: 2.39rem;
+    width: 6.37rem;
+    left: 0;
+    bottom: 0;
+    background: url("../img/line-star-2.png") center center no-repeat;
+}
+
+.line-star-1, .line-star-2 {
+    position: absolute;
+    background-size: cover;
+    opacity: 1;
+    transition: all 1s;
+    opacity: 1;
+}
+
+.line-star-1.dis, .line-star-2.dis {
+    opacity: 0;
+}
+
+.swiper-slide-active .btn-up {
+    width: .4rem;
+    height: .25rem;
+    background: url("../img/btn-up.png") center center no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    -webkit-animation: upStart 1.5s infinite ease-in-out;;
+    -o-animation: upStart 1.5s infinite ease-in-out;;
+    animation: upStart 1.5s infinite ease-in-out;;
+}
+
+.btn-up:before, .btn-up:after {
+    content: '';
+    position: absolute;
+    width: 0.8rem;
+    height: 1.4rem;
+    top: -0.375rem;
+}
+
+.btn-up:before {
+    left: -0.6rem;
+}
+
+.btn-up:after {
+    right: -0.6rem;
+}
+
+/* 应聘职位 */
+.job-header {
+    height: 2.6rem;
+    position: relative;
+}
+
+.job-avatar {
+    width: 100%;
+    height: 2.6rem;
+    background: url("../img/job_avatar.png") left top no-repeat;
+    background-size: contain;
+}
+
+.swiper-slide-active .job-name {
+    position: absolute;
+    right: 0.84rem;
+    top: 1rem;
+    width: 2.52rem;
+    height: 1.11rem;
+    line-height: 1.11rem;
+    background: url("../img/job_name.png") center center no-repeat;
+    background-size: cover;
+    font-size: 0.34rem;
+    color: #ffffff;
+    text-align: center;
+    animation: fadeInRight 1s ease 0s 1 normal both;
+}
+
+.mountain {
+    position: absolute;
+    width: 100%;
+    height: 2.31rem;
+    background: url("../img/mountain.png") center center no-repeat;
+    background-size: cover;
+    bottom: 0;
+    z-index: 1;
+}
+
+.job-requirement {
+    position: absolute;
+    top: 3.14rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6.05rem;
+    height: 7.82rem;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 0.26rem;
+}
+
+.swiper-slide-active .job-frame {
+    position: absolute;
+    z-index: -1;
+    width: 6.05rem;
+    height: 7.82rem;
+    background: url("../img/job_requirement.png") center center no-repeat;
+    background-size: cover;
+    animation: bounceIn 2s ease 0s 1 normal both;
+}
+
+.job-item-duty {
+    height: 2.71rem;
+    width: 5.47rem;
+    margin: 0.4rem auto 0;
+}
+
+.job-item-requirement {
+    margin: 1.63rem auto 0;
+    width: 5.5rem;
+    height: 2.71rem;
+}
+
+.swiper-slide-active .job-requirement p {
+    font-size: .46rem;
+    color: #71C8DF;
+    animation: bounceIn 1s ease 0.2s 1 normal both;;
+}
+
+.swiper-slide-active .job-requirement div {
+    animation: bounceIn 1s ease 0.5s 1 normal both;
+}
+
+/* 联系我们 */
+.ufo-wrap {
+    position: absolute;
+    width: 3.37rem;
+    height: 3.9rem;
+    left: 0.37rem;
+    top: 1.45rem;
+    z-index: 10;
+}
+
+.swiper-slide-active .ufo {
+    width: 2.6rem;
+    height: 1.85rem;
+    background: url("../img/ufo.png") center center no-repeat;
+    background-size: cover;
+    animation: fadeInLeft 1s ease 0s 1 normal both;
+}
+
+.swiper-slide-active .light {
+    position: absolute;
+    width: 2.5rem;
+    height: 3.18rem;
+    right: 0;
+    bottom: 0;
+    background: url("../img/light.png") center center no-repeat;
+    background-size: cover;
+    opacity: 0;
+    animation: flash 2s ease 1s infinite normal both;
+}
+
+.swiper-slide-active .contact-us {
+    font-size: 0.24rem;
+    line-height: 0.48rem;
+}
+
+.contact-us > p {
+    font-size: 0.34rem;
+    text-align: left;
+    padding-left: 0.21rem;
+    padding-top: 0.06rem;
+}
+
+.contact-ways {
+    position: absolute;
+    width: 6.33rem;
+    height: 6.08rem;
+    top: 4.46rem;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.53rem 0.32rem 0.53rem 0.45rem;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.swiper-slide-active .contact-bg {
+    position: absolute;
+    width: 6.33rem;
+    height: 6.08rem;
+    left: 0;
+    top: 0;
+    background: url("../img/contact.png") center center no-repeat;
+    background-size: cover;
+    animation: bounceIn 1s ease 0s 1 normal both;
+}
+
+.contact-ways p {
+    font-size: 0.3rem;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+}
+
+.email {
+    width: 0.5rem;
+    height: 0.3rem;
+    margin-top: 1px;
+    background: url("../img/email.png") center center no-repeat;
+}
+
+.phone {
+    width: 0.5rem;
+    height: 0.5rem;
+    position: relative;
+    top: 0.1rem;
+    background: url("../img/tel.png") center center no-repeat;
+}
+
+.address {
+    width: 0.38rem;
+    height: 0.5rem;
+    position: relative;
+    top: 0.1rem;
+    background: url("../img/address.png") center center no-repeat;
+}
+
+.swiper-slide-active .contact-ways b {
+    display: inline-block;
+    background-size: cover;
+    margin-right: 0.1rem;
+    animation: fadeInLeft 1s ease 0s 1 normal both;
+}
+
+.swiper-slide-active .contact-ways span {
+    display: inline-block;
+    animation: zoomIn 1s ease 0.4s 1 normal both;
+}
+
+.moon {
+    position: absolute;
+    height: 2.78rem;
+    width: 100%;
+    bottom: 0;
+    background: url("../img/moon.png") center center no-repeat;
+    background-size: cover;
+}
+
+.contact-line-star {
+    top: 2.3rem;
+}
+
+/* 任职要求 新 */
+.swiper-slide-active .job-requirement_new {
+    position: absolute;
+    z-index: 9;
+    padding: 0.2rem;
+    border: 0.04rem solid #57B4BD;
+    border-radius: 0.2rem;
+    color: #ffffff;
+    font-size: 0.26rem;
+    margin: 0.1rem 0.68rem 0;
+    line-height: 0.48rem;
+    animation: bounceIn 2s ease 0s 1 normal both;
+}
+
+.job-requirement_new:before {
+    content: '';
+    position: absolute;
+    left: -0.07rem;
+    top: -0.08rem;
+    width: 1.07rem;
+    height: 1.5rem;
+    background: url("../img/left_up.png") center center no-repeat;
+    background-size: cover;
+}
+
+.job-requirement_new:after {
+    content: '';
+    position: absolute;
+    right: -0.07rem;
+    bottom: -0.08rem;
+    width: 1.07rem;
+    height: 1.5rem;
+    background: url("../img/right_down.png") center center no-repeat;
+    background-size: cover;
+}
+
+.swiper-slide-active .job-item-duty_new > p {
+    color: #71C8DF;
+    font-size: 0.46rem;
+    margin-bottom: 0.3rem;
+    animation: bounceIn 1s ease 0.2s 1 normal both;
+}
+
+.swiper-slide-active .job-item-duty_new > div {
+    animation: bounceIn 1s ease 0.5s 1 normal both;
+    word-wrap: break-word
+}
+
+/* 等待动画 */
+.loader-inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #161A22;
+    background-size: cover;
+    position: absolute;
+    z-index: 100;
+}
+.loader-inner.hide{
+    display: none;
+}
+
+.ball-clip-rotate-multiple > div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 35px;
+    height: 35px;
+    transform: translate(-50%, -50%);
+    border: 2px solid #6AC3DE;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-radius: 100%;
+    -webkit-animation: rotate 1s 0s ease-in-out infinite;
+    animation: rotate 1s 0s ease-in-out infinite;
+}
+
+.ball-clip-rotate-multiple > div:last-child {
+    width: 15px;
+    height: 15px;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    border-color: #6AC3DE transparent;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    50% {
+        -webkit-transform: translate(-50%, -50%) rotate(180deg) scale(0.6);
+        transform: translate(-50%, -50%) rotate(180deg) scale(0.6);
+    }
+    100% {
+        -webkit-transform: translate(-50%, -50%) rotate(360deg) scale(1);
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
+}
+
+/* 望远镜动画 */
+@keyframes telescopeRotate {
+    20% {
+        -webkit-transform: rotate(15deg);
+        transform: rotate(15deg)
+    }
+
+    40% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg)
+    }
+
+    60% {
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg)
+    }
+
+    80% {
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg)
+    }
+
+    to {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+}
+
+/* 上拉按钮 */
+@keyframes upStart {
+    0%, 30% {
+        opacity: 0;
+        -webkit-transform: translateY(10px)
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate(0)
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translateY(-8px)
+    }
+}
+
+/* 放大镜 */
+@keyframes flip {
+    0% {
+        -webkit-transform: perspective(400px) rotateY(-1turn);
+        transform: perspective(400px) rotateY(-1turn);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out
+    }
+
+    40% {
+        -webkit-transform: perspective(400px) translateZ(150px) rotateY(-190deg);
+        transform: perspective(400px) translateZ(150px) rotateY(-190deg);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out
+    }
+
+    50% {
+        -webkit-transform: perspective(400px) translateZ(150px) rotateY(-170deg);
+        transform: perspective(400px) translateZ(150px) rotateY(-170deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in
+    }
+
+    80% {
+        -webkit-transform: perspective(400px) scale3d(.95, .95, .95);
+        transform: perspective(400px) scale3d(.95, .95, .95);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in
+    }
+
+    to {
+        -webkit-transform: perspective(400px);
+        transform: perspective(400px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in
+    }
+}
+
+/* 大神搜寻令 */
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3)
+    }
+
+    50% {
+        opacity: 1
+    }
+}
+
+/* 大神搜寻令框 */
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, to {
+        transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3)
+    }
+
+    20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1)
+    }
+
+    40% {
+        -webkit-transform: scale3d(.9, .9, .9);
+        transform: scale3d(.9, .9, .9)
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03)
+    }
+
+    80% {
+        -webkit-transform: scale3d(.97, .97, .97);
+        transform: scale3d(.97, .97, .97)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+}
+
+/* 酒店帮 */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, 200px);
+        transform: translate(-50%, 200px)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%)
+    }
+}
+
+/* 职位名称 */
+@keyframes fadeInRight {
+    0% {
+        opacity: 1;
+        -webkit-transform: translate3d(200px, 0, 0);
+        transform: translate3d(200px, 0, 0)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 1;
+        -webkit-transform: translate3d(-200px, 0, 0);
+        transform: translate3d(-200px, 0, 0)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+@keyframes flash {
+    0%, 50%, to {
+        opacity: 0
+    }
+
+    25%, 75% {
+        opacity: 1
+    }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>s
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<script>
+    $.ajax({
+        url:'http://139.199.194.37:81/User/UserAdd',
+//        data:'',
+        dataType:'json',
+        type:'POST',
+        data:{
+            IUserTelephone:'17598655698',
+            IUserEmail:'1@1#'
+        }
+    }).done(function (data) {
+        console.dir(data)
+    }).fail(function () {
+        console.log(132);
+    })
+</script>
+</body>
+</html>

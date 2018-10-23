@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>企业名片</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="css/lib/mui.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/invoice.css">
+    <script src="js/lib/avalon.modern.js"></script>
+    <!--<script src="js/lib/avalon.mobile.js"></script>-->
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+    <script src="js/lib/mui.min.js"></script>
+    <script src="js/lib/h.min.js"></script>
+    <!--<script src="js/all.js"></script>-->
+    <script src="js/invoice.js"></script>
+</head>
+<body :controller="query" class="ms-controller">
+    <!-- 1、头部 -->
+    <!--<header class="invoice-header"></header>-->
+    <!-- 2、搜索框 -->
+    <div class="search-wrap clearfix">
+        <div class="ipt-wrap">
+            <input type="text" class="ipt-search" placeholder="输入企业名称" :duplex='@searchKeyWord' :keyup="keySearch">
+            <a class="search-qymc" :click="@clearIptVal"></a>
+        </div>
+        <a href="#" :active="['active']">取消</a>
+    </div>
+    <!-- 3、下拉列表 -->
+    <!--<div class="query-list clMrgin">-->
+        <!--<div class="list-item">-->
+            <!--<span>贵州</span>智慧通酒店信息科技有限公司-->
+        <!--</div>-->
+    <!--</div>-->
+    <!-- 4、查询企业提示 -->
+    <div class="cxqy-alert">
+        <img src="img/alert.png" alt="">
+        <p>请输入企业名称，查询企业名片，获取企业6位开票代码</p>
+    </div>
+</body>
+</html>

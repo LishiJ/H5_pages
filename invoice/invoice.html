@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>企业名片</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="css/lib/mui.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/invoice.css">
+    <script src="js/lib/avalon.modern.js"></script>
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+    <script src="js/lib/mui.min.js"></script>
+    <script src="js/lib/h.min.js"></script>
+    <script src="js/all.js"></script>
+    <!--<script src="js/lib/vconsole.min.js"></script>-->
+    <script src="js/invoice.js"></script>
+</head>
+<body :controller="invoice" class="ms-controller">
+    <!-- 1、头部 -->
+    <!--<header class="invoice-header"></header>-->
+    <!-- 2、开票码 -->
+    <div class="invoice-item" :for="(index,el) in funItemArr" :click="index ===1?@toChildPage(el.jumpUrl):@showCode('')">
+        <img :attr="{src:el.icon}" alt="">
+        <div class="item-title">{{el.title}}</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,312 @@
+body{
+    min-width: 1380px;
+}
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+not supported by any browser */
+}
+.main-bg{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+.bg-wrap{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+.main-bg .star {
+    position: fixed;
+}
+.main-bg .star1{
+    -webkit-animation: star1 2.5s linear forwards;
+    animation: star1 2.5s linear forwards;
+}
+.main-bg .star2{
+    -webkit-animation: star1 2.5s linear forwards;
+    animation: star2 1.5s linear forwards;
+}
+.main-bg .star3{
+    -webkit-animation: star1 2.5s linear forwards;
+    animation: star3 1.5s linear forwards;
+}
+.main-bg .star4{
+    -webkit-animation: star1 2.5s linear forwards;
+    animation: star4 1.5s linear forwards;
+}
+.main-bg .star5{
+    -webkit-animation: star1 2.5s linear forwards;
+    animation: star5 1.5s linear forwards;
+}
+/* 展示区域框 */
+.main-part-area {
+    position: fixed;
+    width: 1090px;
+    height: 70%;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    box-shadow: 0 0 20px -5px #78f0ff;
+    background: rgba(0, 0, 0, .3);
+    padding-bottom: 20px;
+    animation: bounceIn 2s ease 0.5s 1 normal both;
+}
+.header{
+    position: fixed;
+    width: 100%;
+}
+.logo{
+    float: left;
+    margin-top: 22px;
+    margin-left: 120px;
+}
+.person-count{
+    float: right;
+    color: #73d0d1;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-right: 150px;
+}
+
+/* */
+.phone-wrap{
+    padding: 50px 30px 0px;
+}
+.title{
+    color: #ffffff;
+    width: 64px;
+    /*height: 150px;*/
+    font-size: 30px;
+    text-align: center;
+    float: left;
+    line-height: 40px;
+    padding: 10px 0 20px;
+	margin-top:-10px;
+    background: -webkit-linear-gradient(transparent, rgba(123,235,251,0.6),transparent); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(transparent, rgba(123,235,251,0.6),transparent); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(transparent, rgba(123,235,251,0.6),transparent); /* Firefox 3.6 - 15 */
+    background: linear-gradient(transparent, rgba(123,235,251,0.6),transparent); /* 标准的语法 */
+}
+.title:hover{
+    cursor: pointer;
+}
+.title span{
+    display: none;
+}
+.title span.on{
+    display: inline-block;
+}
+.phone-frame{
+    width: 700px;
+    height: 110px;
+    border: 1px solid #88E6F7;
+    border-radius: 10px;
+    box-shadow: 0 0 20px -2px #78f0ff inset;
+    float: left;
+    color: #7BEBFB;
+    font-size: 60px;
+    text-align: center;
+    line-height: 110px;
+    overflow: hidden;
+	margin-left:100px
+}
+.get-award-warp{
+    padding: 30px;
+	padding-bottom:0
+}
+.get-award-warp .title{
+    margin-top: 15px;
+}
+.get-award-phone{
+    color: #ffffff;
+    font-size: 30px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-content:center;
+	padding-left:30px;
+	margin-bottom:35px;
+	box-sizing:border-box;
+}
+.phoneNum{
+	position:relative
+}
+.phoneNum.one{
+	margin-top:80px;
+	margin-left:330px;
+	font-size:40px;
+}
+.phoneNum img{
+	position:absolute;
+	width:80px;
+	height:80px;
+	border-radius:50%;
+	left:-90px;
+	top:0px;
+}
+.btn-draw-wrap{
+    text-align: center;
+}
+form{
+    display: inline-block;
+    position: relative;
+    top: -5px;
+}
+.btn-draw{
+    width: 197px;
+    height: 85px;
+    /*float: left;*/
+    display: inline-block;
+    /*margin: 0 auto;*/
+    margin: 0 20px;
+    background: url("../img/main/btn_bg.png") no-repeat center;
+    background-size: cover;
+    color: #7BEBFB;
+    font-size: 30px;
+    line-height: 80px;
+    text-align: center;
+    border: none;
+}
+.btn-draw:hover{
+    cursor: pointer;
+}
+.btn-draw:active{
+    opacity: 0.7;
+}
+/* 动画 */
+@keyframes star1 {
+    0% {
+        top: 100px;
+        left: -500px;
+        -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+
+    100% {
+        top: 100px;
+        left: 200px;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes star2 {
+    0% {
+        bottom: -100px;
+        right: -500px;
+        -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+
+    100% {
+        bottom: -80px;
+        right: -200px;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes star3 {
+    0% {
+        top: 200px;
+        left: 650px;
+    }
+
+    50% {
+        top: 180px;
+        left: 650px;
+    }
+
+    100% {
+        top: 200px;
+        left: 650px;
+    }
+}
+
+@keyframes star4 {
+    0% {
+        bottom: 350px;
+        right: 350px;
+    }
+
+    50% {
+        bottom: 340px;
+        right: 350px;
+    }
+
+    100% {
+        bottom: 350px;
+        right: 350px;
+    }
+}
+
+@keyframes star5 {
+    0% {
+        top: 150px;
+        left: 1250px;
+    }
+
+    50% {
+        top: 140px;
+        left: 1250px;
+    }
+
+    100% {
+        top: 150px;
+        left: 1250px;
+    }
+}
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, to {
+        transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform:translate(-50%,-50%) scale3d(.3, .3, .3);
+        transform:translate(-50%,-50%) scale3d(.3, .3, .3)
+    }
+
+    20% {
+        -webkit-transform:translate(-50%,-50%) scale3d(1.1, 1.1, 1.1);
+        transform:translate(-50%,-50%) scale3d(1.1, 1.1, 1.1)
+    }
+
+    40% {
+        -webkit-transform:translate(-50%,-50%) scale3d(.9, .9, .9);
+        transform:translate(-50%,-50%) scale3d(.9, .9, .9)
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform:translate(-50%,-50%) scale3d(1.03, 1.03, 1.03);
+        transform:translate(-50%,-50%) scale3d(1.03, 1.03, 1.03)
+    }
+
+    80% {
+        -webkit-transform:translate(-50%,-50%) scale3d(.97, .97, .97);
+        transform:translate(-50%,-50%) scale3d(.97, .97, .97)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform:translate(-50%,-50%) scaleX(1);
+        transform:translate(-50%,-50%) scaleX(1)
+    }
+}

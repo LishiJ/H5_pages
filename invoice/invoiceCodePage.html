@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>企业名片</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="css/lib/mui.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/invoice.css">
+    <script src="js/lib/avalon.modern.js"></script>
+    <!--<script src="js/lib/avalon.mobile.js"></script>-->
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+    <script src="js/lib/mui.min.js"></script>
+    <script src="js/lib/h.min.js"></script>
+    <script src="js/invoice.js"></script>
+</head>
+<body :controller="invoiceCode" class="ms-controller">
+    <!-- 1、头部 -->
+    <!--<header class="invoice-header"></header>-->
+    <!-- 2、二维码显示区域 -->
+    <div class="code-wrap">
+        <!-- 2.1 顶部提示信息 -->
+        <p class="title-info">向商家展示你的6位开票代码或二维码</p>
+        <!-- 2.2 二维码 -->
+        <div class="code-stage">
+            <p>当前是{{@onlineCode?'在线':'离线'}}二维码</p>
+            <img :attr="{src:@codeUrl}" alt="" id="code" crossorigin="anonymous">
+            <div class="invoice-no">企业税号：{{showCodeInvoice.BusinessTax}}</div>
+            <!-- 公司名称及编辑按钮 -->
+            <div class="code-company-info clearfix">
+                <div class="company-name">{{showCodeInvoice.CorporateName}}</div>
+                <div class="check-more-info" :click="@toggleCheckMore">查看更多<i></i></div>
+            </div>
+            <!-- 切换在线/离线 -->
+            <div class="toggle-on-off" :click="@toggleOnOffLineCode">切换{{@onlineCode?'离线':'在线'}}</div>
+        </div>
+        <!-- 2.3 企业更多信息 -->
+        <div class="company-more-info" :click="@toggleCheckMore | prevent">
+            <div class="company-info-stage">
+                <div class="over-wrap">
+                    <div class="info-title">企业开票信息</div>
+                    <div class="main-info">
+                        <div class="main-item">
+                            <div class="main-left">企业名称</div>
+                            <div class="main-right">{{showCodeInvoice.CorporateName}}</div>
+                        </div>
+                        <div class="main-item">
+                            <div class="main-left">企业税号</div>
+                            <div class="main-right">{{showCodeInvoice.BusinessTax}}</div>
+                        </div>
+                        <div class="main-item">
+                            <div class="main-left">注册地址</div>
+                            <div class="main-right">{{showCodeInvoice.DetailedAddress}}</div>
+                        </div>
+                        <div class="main-item">
+                            <div class="main-left">注册电话</div>
+                            <div class="main-right">{{showCodeInvoice.RegisteredTelephone}}</div>
+                        </div>
+                        <div class="main-item">
+                            <div class="main-left">开户银行</div>
+                            <div class="main-right">{{showCodeInvoice.BankOfDeposit}}</div>
+                        </div>
+                        <div class="main-item">
+                            <div class="main-left">开户账号</div>
+                            <div class="main-right">{{showCodeInvoice.AccountNumber}}</div>
+                        </div>
+                    </div>
+                    <div class="bottom-btn-wrap clearfix">
+                        <!--<div class="used lf">已使用 <span></span></div>-->
+                        <a class="edit" :click="@editInvoice(showCodeInvoice.BusinessTax)">编辑</a>
+                    </div>
+                </div>
+                <a class="close-company-info"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

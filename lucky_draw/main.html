@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>贵州智慧通酒店信息科技有限公司_2018智能终端机全国发布会_抽奖活动</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/lib/jquery-1.11.1.min.js"></script>
+    <script src="js/lib/avalon.modern.js"></script>
+    <script src="js/lib/FileSaver.min.js"></script>
+    <script src="./js/main.js"></script>
+</head>
+<body :controller="luckyDraw">
+    <div class="bg-wrap">
+        <video :attr="{src:'./video/bg.mp4'}" autoplay="autoplay" loop="loop" style="background:#040811"></video>
+    </div>
+    <div class="main-bg">
+        <div class="star star1"><img src="./img/main/star1.png"></div>
+        <div class="star star2"><img src="./img/main/star2.png"></div>
+        <div class="star star3"><img src="./img/main/star3.png"></div>
+        <div class="star star4"><img src="./img/main/star4.png"></div>
+        <div class="star star5"><img src="./img/main/star5.png"></div>
+    </div>
+     <!--顶部-->
+    <div class="header">
+        <div class="logo"><img src="./img/main/logo.png" alt=""></div>
+        <p class="person-count">抽奖人数：{{@personCount}}</p>
+    </div>
+    <!-- 主体部分 -->
+    <div class="main-part-area">
+        <!-- 手机号轮播区域 -->
+        <div class="phone-wrap clearfix">
+            <div class="title noselect" :click="@toggleMenu">
+                <span :attr="{class:(@selectedIdx == 0 ?'on':'')}">一<br>等<br>奖</span>
+                <span :attr="{class:(@selectedIdx == 1 ?'on':'')}">二<br>等<br>奖</span>
+                <span :attr="{class:(@selectedIdx == 2 ?'on':'')}">三<br>等<br>奖</span>
+            </div>
+            <div class="phone-frame">
+                <p>{{showPhone | phoneFilter}}</p>
+                <!--<ul>-->
+                    <!--<li :for="item in @showPhoneList">{{item.Phone | phoneFilter}}</li>-->
+                <!--</ul>-->
+            </div>
+        </div>
+        <!-- 中奖手机号展示区域 -->
+        <div class="get-award-warp clearfix">
+            <div class="title noselect">中<br>奖<br>名<br>单</div>
+            <div class="get-award-phone">
+                <div class="phoneNum" :for="item in @selectedPhoneList[@selectedIdx]">{{item.phone | phoneFilter}}</div>
+            </div>
+        </div>
+        <!-- 开始抽奖 -->
+        <div class="btn-draw-wrap">
+            <div class="btn-draw noselect" :click="@toggleBtnMsg">{{btnMsg}}</div>
+            <!--<div class="btn-draw noselect">获奖列表</div>-->
+            <form id="text-options">
+                <input type="submit" value="获奖列表" id="btnSaveWinners"  class="btn-draw noselect"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

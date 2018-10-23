@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>企业名片</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="css/lib/mui.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/invoice.css">
+    <script src="js/lib/avalon.modern.js"></script>
+    <!--<script src="js/lib/avalon.mobile.js"></script>-->
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+    <script src="js/lib/mui.min.js"></script>
+    <script src="js/lib/h.min.js"></script>
+    <!--<script src="js/all.js"></script>-->
+    <script src="js/invoice.js"></script>
+</head>
+<body :controller="invoiceManage" class="ms-controller">
+<!-- 1、头部 -->
+<!--<header class="invoice-header"></header>-->
+<div class="tt-list-wrap">
+    <div class="tt-list" :if="@_invoiceList.length!==0">
+        <div class="tt-item" :for="(index,el) in @_invoiceList">
+            <div class="item-header" :click="@toCodePage(el.BusinessTax)">
+                <p>{{el.CorporateName}}</p>
+                <a href="#" class="updateTt" :click="@addAndCheckTt(index) | stop"></a>
+            </div>
+            <div class="item-footer">
+                <div class="default-tt lf" :click="@setDefault(el.BusinessTax,index)" :active="['active']">
+                    <i class="default-icon" :class="@el.BusinessTax == @defaultTx | checkedIf"></i>
+                    <label>{{el.BusinessTax == @defaultTx | caseIf}}</label>
+                </div>
+                <span class="removeTt rt" :click="@deleteInvoice(el.BusinessTax,index)" :active="'active'">
+                        <i></i>
+                        删除
+                    </span>
+            </div>
+        </div>
+    </div>
+    <!-- 无抬头列表式提示 -->
+    <div class="cxqy-alert tt-alert" :if="_invoiceList.length===0">
+        <img src="img/alert.png" alt="">
+        <p>为了更方便快捷的开发票，请先添加发票抬头</p>
+    </div>
+    <!-- 添加按钮 -->
+    <span href="#" class="addTt" :click="@addAndCheckTt(-1)" :active="active">
+            <i></i>
+            添加抬头
+        </span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>企业名片</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="css/lib/mui.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/invoice.css">
+    <script src="js/lib/avalon.modern.js"></script>
+    <!--<script src="js/lib/avalon.mobile.js"></script>-->
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+    <script src="js/lib/mui.min.js"></script>
+    <script src="js/lib/h.min.js"></script>
+    <script src="js/invoice.js"></script>
+</head>
+<body :controller="addCheckInvoice">
+<!-- 1、头部 -->
+<!--<header class="invoice-header"></header>-->
+<!-- 添加/查看抬头 -->
+<div class="tt-info-wrap" class="ms-controller">
+    <div class="search-wrap clearfix">
+        <div class="ipt-wrap">
+            <input type="text" class="ipt-search" placeholder="输入6位开票码" :duplex='@sixTaxCode' maxlength="6">
+            <a class="search-qymc" :click="@sixTaxCode = ''"></a>
+        </div>
+        <a :click="@checkTaxInfo | stop">查询</a>
+    </div>
+    <div class="company-info tt-ipt-wrap">
+        <div class="tt-info-item">
+            <label><span style="color: red">*</span>公司名称：</label>
+            <input type="text" placeholder="请输入公司名称" :duplex="@invoiceData.CorporateName"
+                   data-identification="CorporateName" class="iptRequire" maxlength="100">
+            <i></i>
+        </div>
+        <div class="tt-info-item">
+            <label><span style="color: red">*</span>企业税号：</label>
+            <input type="text" placeholder="请输入企业税号" :duplex="@invoiceData.BusinessTax"
+                   data-identification="BusinessTax" class="iptRequire" maxlength="50" :attr="{disabled:idx>=0}">
+            <i></i>
+        </div>
+        <div class="tt-info-item">
+            <label>详细地址：</label>
+            <input type="text" placeholder="请输入详细地址" :duplex="@invoiceData.DetailedAddress"
+                   data-identification="DetailedAddress" maxlength="100">
+            <i></i>
+        </div>
+    </div>
+    <div class="contact-info tt-ipt-wrap">
+        <div class="tt-info-item">
+            <label>注册电话：</label>
+            <input type="text" placeholder="请输入企业注册电话" :duplex="@invoiceData.RegisteredTelephone"
+                   data-identification="RegisteredTelephone" maxlength="20">
+            <i></i>
+        </div>
+        <div class="tt-info-item">
+            <label>开户银行：</label>
+            <input type="text" placeholder="请输入开户银行" :duplex="@invoiceData.BankOfDeposit"
+                   data-identification="BankOfDeposit" maxlength="50">
+            <i></i>
+        </div>
+        <div class="tt-info-item">
+            <label>开户账号：</label>
+            <input type="text" placeholder="请输入开户账号" :duplex="@invoiceData.AccountNumber"
+                   data-identification="AccountNumber" maxlength="50">
+            <i></i>
+        </div>
+        <div class="tt-info-item">
+            <label>电子邮箱：</label>
+            <input type="text" placeholder="请输入邮箱（接受电子发票）" :duplex="@invoiceData.UserEmil"
+                   data-identification="UserEmil" maxlength="50">
+            <i></i>
+        </div>
+    </div>
+    <button :click="@updateInvoice"
+            :class="['sure-tt',(@invoiceData.CorporateName !=''&&@invoiceData.CorporateName!=null&&@invoiceData.BusinessTax!=''&&@invoiceData.BusinessTax!=null? 'on':'')]">
+        确认
+    </button>
+    <!-- 开票码提示语 -->
+    <p class="kpmtsy" :click='@action = @action !== "leave" ? "leave": "enter"'>如何获取开票码</p>
+</div>
+<!-- 开票码获取提示步骤 -->
+<div class="getCodeStep" ms-effect="{is:'slide',action:@action}" :if="@action == 'leave'">
+    <div class="help-header">
+        <i></i>
+        <span>如何获取开票代码？</span>
+        <b :click="@action = @action !=='leave'?'leave':'enter'"></b>
+    </div>
+    <!-- 步骤 -->
+    <div class="help-step-wrap">
+        <div class="help-step" :for="(index,el) in @stepArrL">
+            <i :css="{backgroundImage:'url('+el.icon+')'}"></i>
+            <span>{{el.msg}}</span>
+            <img :attr="{src:el.img}" alt="">
+            <a :attr="{href:el.link}" :if="el.link"></a>
+        </div>
+    </div>
+</div>
+<!-- 开票码遮罩层 -->
+<div class="code-step-mask" :if="@action == 'leave'" :click="@action = @action !=='leave'?'leave':'enter'"></div>
+</body>
+</html>
